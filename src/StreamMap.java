@@ -7,7 +7,7 @@ public class StreamMap {
     public static void main(String[] args) {
 
 //        ブルーロック選手名鑑
-        Map<Integer, String> BlueLocks = new HashMap<>() {
+        Map<Integer, String> blueLocks = new HashMap<>() {
             {
                 put(11, "Isagi");
                 put(10, "Itoshi");
@@ -26,12 +26,12 @@ public class StreamMap {
         Integer searchNumber = sc1.nextInt();
 
 //        背番号（数字）=名前を出力
-        Map<Integer, String> Outputs = BlueLocks.entrySet().stream()
+        Map<Integer, String> outputs = blueLocks.entrySet().stream()
                 .filter(blueLock -> searchNumber.equals(blueLock.getKey()))
                 .collect((Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
 
-        if (Outputs.get(searchNumber) != null) {
-            System.out.println(Outputs.keySet()+":"+Outputs.values());
+        if (outputs.get(searchNumber) != null) {
+            System.out.println(outputs.keySet()+":"+outputs.values());
         } else {
             System.out.println("検索した背番号は空き番です");
         }
